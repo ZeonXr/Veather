@@ -1,0 +1,69 @@
+@font-face {
+	font-family: 'Rubik-Regular';
+	src: url('../fonts/Rubik-Regular.ttf');
+}
+
+@font-face {
+	font-family: 'gillsans-heavy';
+	src: url('../fonts/gillsans-heavy.ttf');
+}
+
+html {
+    line-height: 1;
+    -webkit-text-size-adjust: 100%;
+    font-weight: 700;
+}
+body {
+    margin: 0;
+}
+body::-webkit-scrollbar {
+    display: none;
+}
+
+ul,
+li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+img {
+    -webkit-user-drag: none;
+}
+
+/* ------------- 路由过渡动画 start ------------- */
+
+/* 进入和离开时的过渡状态 */
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: all 0.3s;
+}
+.fade-enter,
+.fade-leave-to {
+    opacity: 0;
+}
+
+.slidefade-enter-active,
+.slidefade-leave-active {
+    position: absolute;
+    width: 100%;
+    transition: all 0.3s;
+}
+
+.slidefade-enter,
+.slidefade-leave-to {
+    opacity: 0;
+    transform: translateY(-200px);
+}
+
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
