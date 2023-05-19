@@ -11,7 +11,7 @@
             {{
               $store.state.forecast.days[index].fxDate
                 .substr(5, 5)
-                .replace("-", "/")
+                .replace('-', '/')
             }}
           </span>
         </span>
@@ -32,11 +32,11 @@
 </template>
 
 <script>
-import Card from "./card.vue";
+import Card from './card.vue'
 
 export default {
   components: { Card },
-};
+}
 </script>
 
 <style>

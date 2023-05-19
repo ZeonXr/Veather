@@ -19,21 +19,21 @@
 </template>
 
 <script>
-import NavBar from "../common/NavBar";
-import { mapMutations } from "vuex";
+import NavBar from '../common/NavBar'
+import { mapMutations } from 'vuex'
 
 export default {
   components: {
     NavBar,
   },
   methods: {
-    ...mapMutations(["switchMenu"]),
+    ...mapMutations(['switchMenu']),
     openMenu() {
-      this.$store.state.menuState = true;
+      this.$store.state.menuState = true
     },
     cityClick() {
-      this.$router.push("/CityChoose");
+      this.$router.push('/CityChoose')
     },
   },
-};
+}
 </script>

@@ -42,25 +42,25 @@
 export default {
   data() {
     return {
-      updateicon: require("@/assets/img/mainboard/update.png"),
-      position: require("@/assets/img/mainboard/position.png"),
-      posIconUrl: require("@/assets/img/citychoose/position.png"),
-    };
+      updateicon: require('@/assets/img/mainboard/update.png'),
+      position: require('@/assets/img/mainboard/position.png'),
+      posIconUrl: require('@/assets/img/citychoose/position.png'),
+    }
   },
 
   methods: {
     updateBtn() {
-      this.$store.dispatch("getWeather", this.$store.state.cityid);
+      this.$store.dispatch('getWeather', this.$store.state.cityid)
     },
   },
-};
+}
 </script>
 
 <style lang="scss" scoped>
 .main-board {
   margin: 10px 0;
   width: 100%;
-  font-family: "Rubik-Regular";
+  font-family: 'Rubik-Regular';
   color: #414141;
 }
 

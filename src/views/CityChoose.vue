@@ -73,8 +73,8 @@
 </template>
 
 <script>
-import NavBar from "@/components/common/NavBar";
-import { getCitylist } from "@/network/request";
+import NavBar from '@/components/common/NavBar'
+import { getCitylist } from '@/network/request'
 
 export default {
   components: {
@@ -88,100 +88,100 @@ export default {
       editState: false,
       // transState: false,
       editBtnHide: true,
-      keyword: "",
+      keyword: '',
       lists: [],
       timer: null,
-      backIconUrl: require("@/assets/img/navbar/back.png"),
-      editIconUrl: require("@/assets/img/citychoose/edit.png"),
-      posIconUrl: require("@/assets/img/citychoose/position.png"),
-      doneIconUrl: require("@/assets/img/citychoose/done.png"),
-    };
+      backIconUrl: require('@/assets/img/navbar/back.png'),
+      editIconUrl: require('@/assets/img/citychoose/edit.png'),
+      posIconUrl: require('@/assets/img/citychoose/position.png'),
+      doneIconUrl: require('@/assets/img/citychoose/done.png'),
+    }
   },
   methods: {
     backBtn() {
-      this.$router.back(-1);
+      this.$router.back(-1)
     },
     editBtn() {
-      this.editState = !this.editState;
+      this.editState = !this.editState
     },
     getFocus() {
-      this.isShow = true;
+      this.isShow = true
       // this.transState = true;
-      this.editBtnHide = false;
+      this.editBtnHide = false
     },
 
     cancelBtn() {
-      this.isShow = false;
+      this.isShow = false
       // this.transState = false;
-      this.keyword = "";
-      this.editBtnHide = true;
+      this.keyword = ''
+      this.editBtnHide = true
     },
 
     addNewCity(city, cityid) {
-      this.editBtnHide = true;
-      this.$store.state.selectedCitys.push(city);
-      this.$store.dispatch("getWeather", cityid);
-      this.$router.push("/Home");
-      this.$store.state.menuState = false;
+      this.editBtnHide = true
+      this.$store.state.selectedCitys.push(city)
+      this.$store.dispatch('getWeather', cityid)
+      this.$router.push('/Home')
+      this.$store.state.menuState = false
       // this.$store.state.loadingTip = true;
       // setTimeout(() => {
       //   this.$store.state.loadingTip = false;
       // }, 1000);
     },
     jumpTo(cityid) {
-      this.$store.dispatch("getWeather", cityid);
-      this.$router.push("/Home");
-      this.$store.state.menuState = false;
+      this.$store.dispatch('getWeather', cityid)
+      this.$router.push('/Home')
+      this.$store.state.menuState = false
       // this.$store.state.loadingTip = true;
       // setTimeout(() => {
       //   this.$store.state.loadingTip = false;
       // }, 1000);
     },
     posDelBtn() {
-      this.$store.state.city = null;
-      this.$store.state.cityid = null;
+      this.$store.state.city = null
+      this.$store.state.cityid = null
     },
     delBtn(index) {
-      this.$store.state.selectedCitys.splice(index, 1);
+      this.$store.state.selectedCitys.splice(index, 1)
     },
   },
 
   watch: {
     keyword() {
       if (this.timer) {
-        clearTimeout(this.timer);
-        this.hasNoData = false;
-        this.lists = [];
+        clearTimeout(this.timer)
+        this.hasNoData = false
+        this.lists = []
       }
 
       if (!this.keyword) {
-        this.lists = [];
-        return;
+        this.lists = []
+        return
       }
 
       this.timer = setTimeout(() => {
         getCitylist(this.keyword).then((res) => {
           if (res.data.code == 404) {
-            console.log("您输入的城市不存在");
-            this.hasNoData = true;
-            this.lists = [];
+            console.log('您输入的城市不存在')
+            this.hasNoData = true
+            this.lists = []
           } else {
-            let result = [];
+            let result = []
             for (let i in res.data.location) {
-              result.push(res.data.location[i]);
+              result.push(res.data.location[i])
             }
 
             if (!result.length) {
-              this.hasNoData = true;
+              this.hasNoData = true
             } else {
-              this.lists = result;
+              this.lists = result
             }
           }
-        });
-      }, 300);
+        })
+      }, 300)
     },
   },
-};
+}
 </script>
 
 <style lang="scss" scoped>
@@ -244,7 +244,7 @@ export default {
   list-style: none;
 
   transition: all 0.3s;
-  background: url("../assets/img/citychoose/search.png") no-repeat;
+  background: url('../assets/img/citychoose/search.png') no-repeat;
   background-size: 18px 18px;
   background-position: 8px 50%;
 

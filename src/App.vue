@@ -10,29 +10,29 @@
 </template>
 
 <script>
-import Loading from "@/components/content/Loading";
+import Loading from '@/components/content/Loading'
 
 export default {
-  name: "APP",
+  name: 'APP',
   mounted() {
-    this.$store.dispatch("getWeather", this.$store.state.cityid);
+    this.$store.dispatch('getWeather', this.$store.state.cityid)
   },
-  components:{
-    Loading
-  }
-};
+  components: {
+    Loading,
+  },
+}
 </script>
 
 <style lang="scss">
-@import "./assets/css/base.css";
+@import './assets/css/base.css';
 
 $bgc: rgb(169, 207, 250) 0%, rgb(240, 190, 213) 100%;
 
 #app {
-  font-family: "Rubik-Regular";
+  font-family: 'Rubik-Regular';
   @keyframes rbgr {
     @for $i from 0 through 100 {
-      #{$i + "%"} {
+      #{$i + '%'} {
         background: linear-gradient(($i/100) * 360 + deg, $bgc);
       }
     }
@@ -43,7 +43,7 @@ $bgc: rgb(169, 207, 250) 0%, rgb(240, 190, 213) 100%;
     top: 0;
     left: 0;
     z-index: -20;
-    content: "";
+    content: '';
     width: 100%;
     height: 100%;
     animation: rbgr 60s infinite linear;

@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import NavBar from "@/components/common/NavBar";
+import NavBar from '@/components/common/NavBar'
 
 export default {
   components: {
@@ -26,16 +26,16 @@ export default {
   },
   data() {
     return {
-      backIconUrl: require("@/assets/img/navbar/back.png"),
-      githubicon: require("@/assets/img/app/github.png"),
-    };
+      backIconUrl: require('@/assets/img/navbar/back.png'),
+      githubicon: require('@/assets/img/app/github.png'),
+    }
   },
   methods: {
     backBtn() {
-      this.$router.back(-1);
+      this.$router.back(-1)
     },
   },
-};
+}
 </script>
 
 <style lang="scss" scoped>

@@ -23,24 +23,24 @@
 export default {
   data() {
     return {
-      setIconUrl: require("@/assets/img/menu/setting.svg"),
-      aboutIconUrl: require("@/assets/img/menu/about.svg"),
-      subscribeIconUrl: require("@/assets/img/menu/subscribe.svg"),
-    };
+      setIconUrl: require('@/assets/img/menu/setting.svg'),
+      aboutIconUrl: require('@/assets/img/menu/about.svg'),
+      subscribeIconUrl: require('@/assets/img/menu/subscribe.svg'),
+    }
   },
 
   methods: {
     menuClick() {
-      this.$store.state.menuState = false;
+      this.$store.state.menuState = false
     },
     cityClick() {
-      this.$router.push("/CityChoose");
+      this.$router.push('/CityChoose')
     },
     about() {
-      this.$router.push("/About");
+      this.$router.push('/About')
     },
   },
-};
+}
 </script>
 
 <style lang="scss" scoped>
@@ -91,7 +91,7 @@ export default {
   .developer {
     position: absolute;
     right: calc(50% - 50px);
-    top:calc(100vh - 50px);
+    top: calc(100vh - 50px);
     padding: 6px 12px;
     background: #1494d92a;
     border-radius: 12px;

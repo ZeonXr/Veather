@@ -14,14 +14,14 @@
 </template>
 
 <script>
-import Card from "./card.vue";
+import Card from './card.vue'
 
 export default {
   components: { Card },
-};
+}
 </script>
 
-<style >
+<style>
 .life-guide {
   display: flex;
   flex-wrap: wrap;

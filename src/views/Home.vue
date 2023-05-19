@@ -24,13 +24,13 @@
 </template>
 
 <script>
-import SideMenu from "@/components/content/SideMenu";
-import WeatherNav from "@/components/content/WeatherNav";
-import MainBoard from "@/components/content/MainBoard";
-import day7Forecast from "@/components/child/Day7";
-import detlpage from "@/components/child/DetlPage";
-import LifeGuide from "@/components/child/LifeGuide";
-import PageFooter from "@/components/content/PageFooter";
+import SideMenu from '@/components/content/SideMenu'
+import WeatherNav from '@/components/content/WeatherNav'
+import MainBoard from '@/components/content/MainBoard'
+import day7Forecast from '@/components/child/Day7'
+import detlpage from '@/components/child/DetlPage'
+import LifeGuide from '@/components/child/LifeGuide'
+import PageFooter from '@/components/content/PageFooter'
 // import Loading from "@/components/content/Loading";
 
 export default {
@@ -46,10 +46,10 @@ export default {
   },
   methods: {
     maskClick() {
-      this.$store.state.menuState = false;
+      this.$store.state.menuState = false
     },
   },
-};
+}
 </script>
 
 <style lang="scss">

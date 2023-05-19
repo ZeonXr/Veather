@@ -60,13 +60,13 @@
 </template>
 
 <script>
-import Card from "./card.vue";
-const temp = require("@/assets/img/detlpage/temp.png");
-const mintemp = require("@/assets/img/detlpage/mintemp.png");
-const maxtemp = require("@/assets/img/detlpage/maxtemp.png");
-const windir = require("@/assets/img/detlpage/windir.png");
-const humidity = require("@/assets/img/detlpage/humidity.png");
-const airpre = require("@/assets/img/detlpage/airpre.png");
+import Card from './card.vue'
+const temp = require('@/assets/img/detlpage/temp.png')
+const mintemp = require('@/assets/img/detlpage/mintemp.png')
+const maxtemp = require('@/assets/img/detlpage/maxtemp.png')
+const windir = require('@/assets/img/detlpage/windir.png')
+const humidity = require('@/assets/img/detlpage/humidity.png')
+const airpre = require('@/assets/img/detlpage/airpre.png')
 
 export default {
   components: { Card },
@@ -78,13 +78,12 @@ export default {
       windir,
       humidity,
       airpre,
-    };
+    }
   },
-};
+}
 </script>
 
 <style lang="scss" scoped>
-
 .detl {
   padding: 8px 0;
   display: grid;

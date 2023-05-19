@@ -6,8 +6,8 @@ import {
   getCitylist,
   getNowData,
   get7DaysData,
-  getLifestyle
-} from "@/network/request";
+  getLifestyle,
+} from '@/network/request'
 
 Vue.use(Vuex)
 
@@ -29,12 +29,12 @@ export default new Vuex.Store({
       tempMin: '20',
       weathername: '晴',
       weathericoncode: '101',
-      updatetime: null
+      updatetime: null,
     },
     forecast: {
       days: [],
       weekdays: [],
-      wcode: []
+      wcode: [],
     },
     lifestyle: [],
     selectedCitys: [],
@@ -58,11 +58,13 @@ export default new Vuex.Store({
       state.now.tempMin = state.forecast.days[0].tempMin
 
       state.forecast.wcode = [] // 清空原数组 避免误触发多次 造成数组污染
-      state.forecast.weekdays = ["今天", "明天"]
-      const weekDay = ["周日", "周一", "周二", "周三", "周四", "周五", "周六"]
+      state.forecast.weekdays = ['今天', '明天']
+      const weekDay = ['周日', '周一', '周二', '周三', '周四', '周五', '周六']
 
       for (let i = 2; i < state.forecast.days.length; i++) {
-        state.forecast.weekdays.push(weekDay[new Date(state.forecast.days[i].fxDate).getDay()])
+        state.forecast.weekdays.push(
+          weekDay[new Date(state.forecast.days[i].fxDate).getDay()]
+        )
       }
       for (let i = 0; i < state.forecast.days.length; i++) {
         state.forecast.wcode.push(state.forecast.days[i].iconDay)
@@ -76,22 +78,29 @@ export default new Vuex.Store({
   actions: {
     getWeather(context, pos) {
       this.state.loadingTip = true
-      axios.all([getCitylist(pos), getNowData(pos), get7DaysData(pos), getLifestyle(pos)]).then(axios.spread(
-        (ctn, res1, res2, res3) => {
-          context.commit('updateWeather', {
-            ctn,
-            res1,
-            res2,
-            res3
-          });
-        }),
-        (err) => {
-          setTimeout(() => {
-            this.state.loadingTip = false
-            alert("更新失败，请检查网络\n"+err)
-          }, 2500)
-        }
-      )
-    }
-  }
+      axios
+        .all([
+          getCitylist(pos),
+          getNowData(pos),
+          get7DaysData(pos),
+          getLifestyle(pos),
+        ])
+        .then(
+          axios.spread((ctn, res1, res2, res3) => {
+            context.commit('updateWeather', {
+              ctn,
+              res1,
+              res2,
+              res3,
+            })
+          }),
+          (err) => {
+            setTimeout(() => {
+              this.state.loadingTip = false
+              alert('更新失败，请检查网络\n' + err)
+            }, 2500)
+          }
+        )
+    },
+  },
 })
