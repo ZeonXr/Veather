@@ -7,7 +7,7 @@
         @click="openMenu"
       />
     </div>
-    <div slot="center">Veather</div>
+    <div slot="center">Veather TEST</div>
     <div slot="right">
       <img
         class="plus-icon"
