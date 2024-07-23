@@ -8,9 +8,9 @@
       <div class="intro">
         <h1>欢迎</h1>
         <p>基于 Vue.js 框架开发<br />气象数据来源于和风天气 api</p>
-        <a class="github-icon" href="https://github.com/ZevilL" target="_blank">
+        <a class="github-icon" href="https://github.com/ZeonXr" target="_blank">
           <img :src="githubicon" />
-          <span>ZeviL</span>
+          <span>ZeonX</span>
         </a>
       </div>
     </main>

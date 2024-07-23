@@ -13,8 +13,8 @@
         关于
       </div>
     </div>
-    <a href="https://github.com/ZevilL" class="developer" target="_blank">
-      开发者 · ZeviL
+    <a href="https://github.com/ZeonXr" class="developer" target="_blank">
+      开发者 · ZeonX
     </a>
   </div>
 </template>
